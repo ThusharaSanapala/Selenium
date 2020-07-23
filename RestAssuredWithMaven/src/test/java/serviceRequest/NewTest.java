@@ -15,12 +15,12 @@ public class NewTest {
 	  
 	  
 	  Response res= RestAssured.get("http://samples.openweathermap.org/data/2.5/history/city?id=2885679&type=hour&appid=b1b15e88fa797225412429c1c50c122a1");
+	  String response = res.getBody().asString();
+	  System.out.println(response);
 	  int code=res.getStatusCode();
 	  String status = res.getStatusLine();
 	  System.out.println(code);
 	  System.out.println(status);
-	  String response = res.getBody().asString();
-	  System.out.println(response);
 //	  Headers headers = res.getHeaders();
 //	  for(Header header:headers) {
 //		  
